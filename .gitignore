@@ -1,2 +1,5 @@
-.venv/
-.vscode/*
+db.sqlite3
+.venv
+.env
+.vscode
+

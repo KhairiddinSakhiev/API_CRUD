@@ -1,10 +1,11 @@
 from django.urls import path
-from . import views
-from django.conf import settings
+from .views import DataListCreateView
 
-urlpatterns = [
-path('', views.getData, name="datas"),
-path('post/', views.postData, name="create_datas"),
-path('update/<int:pk>/', views.updateData, name="update_datas"),
-path('delete/<int:pk>/', views.deleteData, name="delete_datas"),
-]
+
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+
+router.register("", DataListCreateView, basename="Data")
+
+urlpatterns = router.urls
